@@ -34,6 +34,7 @@ class Review(models.Model):
     review = models.TextField(max_length=30)
     rate = models.IntegerField(validators=[MaxValueValidator(5),MinValueValidator(0)])
     create_data = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(upload_to='review')
     
 
     def __str__(self):
