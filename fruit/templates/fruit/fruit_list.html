@@ -448,10 +448,10 @@
         {% for fruit in fruit_list %}
           {% if forloop.counter <= 6 %}
             <div class="col-lg-6 col-xl-4">
-                <div class="p-4 rounded bg-light">
+                <div class="p-4 rounded bg-light" style="height: 220px;">
                     <div class="row align-items-center">
                         <div class="col-6">
-                            <img src="{{fruit.image.url}}" class="img-fluid rounded-circle w-100" alt="">
+                            <img src="{{fruit.image.url}}" class="img-fluid rounded-circle w-100" alt="" style="height: 150px;">
                         </div>
                         <div class="col-6">
                             <a href="#" class="h5">{{fruit.name}}</a>
