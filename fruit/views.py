@@ -11,6 +11,13 @@ class FruitList(generic.ListView):
     model = Fruit
     paginate_by = 8
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user_review'] = Review.objects.all()
+        return context
+
+    
+
 
 
 class FruitDetail(generic.DetailView):

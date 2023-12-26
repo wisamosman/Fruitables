@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.core.validators import MaxValueValidator,MinValueValidator
 from django.utils.text import slugify
+from django.db.models.aggregates import Avg , Sum,Count
 # Create your models here.
 
 FRUIT_TYPES = (
@@ -26,7 +27,9 @@ class Fruit(models.Model):
     def __str__(self):
         return self.name
     
-
+    def get_avg_rate(self):
+        avg = self.fruit_review.aggregate(avg=Avg('rate'))
+        return avg
 
 class Review(models.Model):
     user = models.ForeignKey(User,related_name='user_review',on_delete=models.SET_NULL,null=True,blank=True)

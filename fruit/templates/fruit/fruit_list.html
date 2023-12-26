@@ -456,11 +456,11 @@
                         <div class="col-6">
                             <a href="#" class="h5">{{fruit.name}}</a>
                             <div class="d-flex my-3">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 0 %}star{% endif %}"></i>
+                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 1 %}star{% endif %}"></i>
+                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 2 %}star{% endif %}"></i>
+                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 3 %}star{% endif %}"></i>
+                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 4 %}star{% endif %}"></i>
                             </div>
                             <h4 class="mb-3">{{fruit.price}} $</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
@@ -527,18 +527,19 @@
             <h1 class="display-5 mb-5 text-dark">Our Client Saying!</h1>
         </div>
         <div class="owl-carousel testimonial-carousel">
-        {% for review in fruit_list.all %}
-            <div class="testimonial-item img-border-radius bg-light rounded p-4">
+        {% for review in fruit_list %}
+           {% for review in user_review %}
+             {% if review.fruit == fruit %}
+              <div class="testimonial-item img-border-radius bg-light rounded p-4">
                 <div class="position-relative">
                     <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
                         style="bottom: 30px; right: 0;"></i>
                     <div class="mb-4 pb-4 border-bottom border-secondary">
-                        <p class="mb-0">
-                        </p>
+                        <p class="mb-0">{{review.review}}</p>
                     </div>
                     <div class="d-flex align-items-center flex-nowrap">
                         <div class="bg-secondary rounded">
-                            <img src="{{review.image.url}}" class="img-fluid rounded"
+                            <img src="{% static 'img/testimonial-1.jpg' %}" class="img-fluid rounded"
                                 style="width: 100px; height: 100px;" alt="">
                         </div>
                         <div class="ms-4 d-block">
@@ -554,7 +555,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+               </div>
+             {% endif %}
+           {% endfor %}
         {% endfor %}  
         </div>
     </div>
