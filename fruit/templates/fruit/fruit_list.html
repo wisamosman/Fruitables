@@ -527,9 +527,9 @@
             <h1 class="display-5 mb-5 text-dark">Our Client Saying!</h1>
         </div>
         <div class="owl-carousel testimonial-carousel">
-        {% for review in fruit_list %}
+        
            {% for review in user_review %}
-             {% if review.fruit == fruit %}
+             
               <div class="testimonial-item img-border-radius bg-light rounded p-4">
                 <div class="position-relative">
                     <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
@@ -556,9 +556,9 @@
                     </div>
                 </div>
                </div>
-             {% endif %}
+             
            {% endfor %}
-        {% endfor %}  
+        
         </div>
     </div>
 </div>
