@@ -148,13 +148,13 @@
                             <div class="row g-4">
                                 {% for fruit in fruit_list %}
                                 <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div class="rounded position-relative fruite-item">
+                                    <div class="rounded position-relative fruite-item ">
                                         <div class="fruite-img">
-                                            <img src="{{fruit.image.url}}" class="img-fluid w-100 rounded-top" alt="">
+                                            <img src="{{fruit.image.url}}" class="img-fluid w-100 rounded-top" alt="" style="height: 200px;">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
-                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            style="top: 10px; left: 10px;">{{fruit.type}}</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom" style="height: 200px;">
                                             <h4>{{fruit.name}}</h4>
                                             <p>{{fruit.subtitle}}</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
@@ -456,11 +456,11 @@
                         <div class="col-6">
                             <a href="#" class="h5">{{fruit.name}}</a>
                             <div class="d-flex my-3">
-                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 0 %}star{% endif %}"></i>
-                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 1 %}star{% endif %}"></i>
-                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 2 %}star{% endif %}"></i>
-                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 3 %}star{% endif %}"></i>
-                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 4 %}star{% endif %}"></i>
+                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 0 %}star text-primary{% endif %}"></i>
+                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 1 %}star text-primary{% endif %}"></i>
+                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 2 %}star text-primary{% endif %}"></i>
+                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 3 %}star text-primary{% endif %}"></i>
+                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 4 %}star text-primary{% endif %}"></i>
                             </div>
                             <h4 class="mb-3">{{fruit.price}} $</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
