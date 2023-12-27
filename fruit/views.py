@@ -26,4 +26,7 @@ class FruitDetail(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['fruit_list'] = Fruit.objects.all()  # Add this line to pass the fruit_list to the template
+        context['star_range'] = range(1, 6)  # Precompute the range from 1 to 5
         return context
+    
+    
