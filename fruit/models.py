@@ -28,6 +28,11 @@ class Fruit(models.Model):
     def __str__(self):
         return self.name
     
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)    
+        super(Fruit, self).save(*args, **kwargs) 
+
+
     def get_avg_rate(self):
         avg = self.fruit_review.aggregate(avg=Avg('rate'))
         return avg
