@@ -20,6 +20,7 @@ class Fruit(models.Model):
     price = models.FloatField()
     image = models.ImageField(upload_to='fruit')
     type = models.CharField(max_length=20,choices=FRUIT_TYPES)
+    slug = models.SlugField(null=True,blank=True)
     description = models.TextField(max_length=300, default='very good production')
     user = models.ForeignKey(User,related_name='user_fruit',on_delete=models.SET_NULL,null=True,blank=True)
 
