@@ -22,3 +22,8 @@ class FruitList(generic.ListView):
 
 class FruitDetail(generic.DetailView):
     model = Fruit    
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['fruit_list'] = Fruit.objects.all()  # Add this line to pass the fruit_list to the template
+        return context

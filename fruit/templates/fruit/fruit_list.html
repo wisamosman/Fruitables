@@ -150,13 +150,14 @@
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="rounded position-relative fruite-item ">
                                         <div class="fruite-img">
-                                            <img src="{{fruit.image.url}}" class="img-fluid w-100 rounded-top" alt="" style="height: 200px;">
+                                        <a href="{% url 'fruit:fruit_detail' fruit.slug %}"><img src="{{fruit.image.url}}" class="img-fluid w-100 rounded-top" alt="" style="height: 200px;"></a>
+                                            
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                                             style="top: 10px; left: 10px;">{{fruit.type}}</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom" style="height: 200px;">
-                                            <h4>{{fruit.name}}</h4>
-                                            <p>{{fruit.subtitle}}</p>
+                                            <a href="{% url 'fruit:fruit_detail' fruit.slug %}">  <h4>{{fruit.name}}</h4></a>
+                                            <a href="{% url 'fruit:fruit_detail' fruit.slug %}">  <p>{{fruit.subtitle}}</p></a>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">${{fruit.price}} / kg</p>
                                                 <a href="#"
@@ -381,7 +382,7 @@
         {% for fruit in fruit_list  %}
             <div class="border border-primary rounded position-relative vesitable-item">
                 <div class="vesitable-img">
-                    <img src="{{fruit.image.url}}" class="img-fluid w-100 rounded-top" alt="" style="height: 200px;">
+                    <a href="{% url 'fruit:fruit_detail' fruit.slug %}"><img src="{{fruit.image.url}}" class="img-fluid w-100 rounded-top" alt="" style="height: 200px;"></a>
                 </div>
                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
                     {{fruit.type}}</div>
