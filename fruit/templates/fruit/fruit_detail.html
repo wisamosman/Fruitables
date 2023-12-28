@@ -30,7 +30,7 @@
                     <div class="col-lg-6">
                         <h4 class="fw-bold mb-3">{{object.name}}</h4>
                         <p class="mb-3">{{object.subtitle}}</p>
-                        <h5 class="fw-bold mb-3">{{object.price}} $</h5>
+                        <h5 class="fw-bold mb-3">{{object.price}}$</h5>
                         <div class="d-flex mb-4">
                             <i class="fa fa-star text-secondary"></i>
                             <i class="fa fa-star text-secondary"></i>
@@ -41,7 +41,7 @@
                         <p class="mb-4">{{object.description}}</p>
                         <div class="input-group quantity mb-5" style="width: 100px;">
                             <div class="input-group-btn">
-                                <button class="btn btn-sm btn-minus rounded-circle bg-light border">
+                                <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
                                     <i class="fa fa-minus"></i>
                                 </button>
                             </div>
@@ -52,8 +52,7 @@
                                 </button>
                             </div>
                         </div>
-                        <a href="#" class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
-                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                        <a href="#" class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                     </div>
                     <div class="col-lg-12">
                         <nav>
@@ -68,12 +67,11 @@
                         </nav>
                         <div class="tab-content mb-5">
                             <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                                <p>{{object.description}} </p>
+                                <p>{{object.description}}</p>
                                 <div class="px-2">
                                     <div class="row g-4">
                                         <div class="col-6">
-                                            <div
-                                                class="row bg-light align-items-center text-center justify-content-center py-2">
+                                            <div class="row bg-light align-items-center text-center justify-content-center py-2">
                                                 <div class="col-6">
                                                     <p class="mb-0">Weight</p>
                                                 </div>
@@ -89,8 +87,7 @@
                                                     <p class="mb-0">Agro Farm</p>
                                                 </div>
                                             </div>
-                                            <div
-                                                class="row bg-light text-center align-items-center justify-content-center py-2">
+                                            <div class="row bg-light text-center align-items-center justify-content-center py-2">
                                                 <div class="col-6">
                                                     <p class="mb-0">Quality</p>
                                                 </div>
@@ -106,8 +103,7 @@
                                                     <p class="mb-0">Healthy</p>
                                                 </div>
                                             </div>
-                                            <div
-                                                class="row bg-light text-center align-items-center justify-content-center py-2">
+                                            <div class="row bg-light text-center align-items-center justify-content-center py-2">
                                                 <div class="col-6">
                                                     <p class="mb-0">Min Weight</p>
                                                 </div>
@@ -120,29 +116,29 @@
                                 </div>
                             </div>
                             <div class="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
-                             {% for review in object.fruit_review.all %}
-                                <div class="d-flex">
-                                    <img src="{{ review.fruit.image.url }}" class="img-fluid rounded-circle p-3"
-                                        style="width: 100px; height: 100px;" alt="">
-                                    <div class="">
-                                        <p class="mb-2" style="font-size: 14px;">{{review.create_data}}</p>
-                                        <div class="d-flex justify-content-between">
-                                            <h5>{{review.user}}</h5>
-                                            <div class="d-flex mb-3">
-                                                <i class="fa fa-star text-secondary"></i>
-                                                <i class="fa fa-star text-secondary"></i>
-                                                <i class="fa fa-star text-secondary"></i>
-                                                <i class="fa fa-star text-secondary"></i>
-                                                <i class="fa fa-star"></i>
+                                {% for review in object.fruit_review.all %}
+                                    <div class="d-flex">
+                                        <img src="{{ review.fruit.image.url }}" class="img-fluid rounded-circle p-3" style="width: 100px; height: 100px;" alt="">
+                                        <div class="">
+                                            <p class="mb-2" style="font-size: 14px;">April 12, 2024</p>
+                                            <div class="d-flex justify-content-between">
+                                                <h5>{{review.user}}</h5>
+                                                <div class="d-flex mb-3">
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
                                             </div>
+                                            <p>{{review.review}}</p>
                                         </div>
-                                        <p>{{review.review}}</p>
                                     </div>
-                                </div>
-                             {% endfor %}   
+                                {% endfor %}    
+                                
+                            </div>
                             <div class="tab-pane" id="nav-vision" role="tabpanel">
-                                <p class="text-dark">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor
-                                    sit. Aliqu diam
+                                <p class="text-dark">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
                                     amet diam et eos labore. 3</p>
                                 <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
                                     Clita erat ipsum et lorem et sit</p>
@@ -164,8 +160,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="border-bottom rounded my-4">
-                                    <textarea name="" id="" class="form-control border-0" cols="30" rows="8"
-                                        placeholder="Your Review *" spellcheck="false"></textarea>
+                                    <textarea name="" id="" class="form-control border-0" cols="30" rows="8" placeholder="Your Review *" spellcheck="false"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -180,8 +175,7 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                     </div>
-                                    <a href="#" class="btn border border-secondary text-primary rounded-pill px-4 py-3">
-                                        Post Comment</a>
+                                    <a href="#" class="btn border border-secondary text-primary rounded-pill px-4 py-3"> Post Comment</a>
                                 </div>
                             </div>
                         </div>
@@ -192,8 +186,7 @@
                 <div class="row g-4 fruite">
                     <div class="col-lg-12">
                         <div class="input-group w-100 mx-auto d-flex mb-4">
-                            <input type="search" class="form-control p-3" placeholder="keywords"
-                                aria-describedby="search-icon-1">
+                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
                             <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
                         </div>
                         <div class="mb-4">
@@ -234,30 +227,29 @@
                     </div>
                     <div class="col-lg-12">
                         <h4 class="mb-4">Featured products</h4>
-                        {% for fruit in fruit_list  %}
-                         {% if forloop.counter <= 6 %}
-                           <div class="d-flex align-items-center justify-content-start">
-                            <div class="rounded" style="width: 100px; height: 100px;">
-                                <img src="{{fruit.image.url}}" class="img-fluid rounded" alt="Image"
-                                    style="height: 65px;">
-                            </div>
-                            <div>
-                                <h6 class="mb-2">{{fruit.name}}</h6>
-                                <div class="d-flex mb-2">
-                                    <i class="fa fa-star text-secondary"></i>
-                                    <i class="fa fa-star text-secondary"></i>
-                                    <i class="fa fa-star text-secondary"></i>
-                                    <i class="fa fa-star text-secondary"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="d-flex mb-2">
-                                    <h5 class="fw-bold me-2">{{fruit.price}} $</h5>
-                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                </div>
-                            </div>
-                            </div>
-                        {% endif %}
-                        {% endfor %}
+                            {% for fruit in fruit_list  %}
+                                {% if forloop.counter <= 6 %}
+                                    <div class="d-flex align-items-center justify-content-start">
+                                        <div class="rounded" style="width: 100px; height: 100px;">
+                                            <img src="{{fruit.image.url}}" class="img-fluid rounded" alt="Image" style="height: 65px;">
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-2">{{fruit.name}}</h6>
+                                            <div class="d-flex mb-2">
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="d-flex mb-2">
+                                                <h5 class="fw-bold me-2">{{fruit.price}}$</h5>
+                                                <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
                     </div>
                     <div class="col-lg-12">
                         <div class="position-relative">
@@ -276,30 +268,24 @@
                 {% for fruit in fruit_list  %}
                 <div class="border border-primary rounded position-relative vesitable-item">
                     <div class="vesitable-img">
-                        <a href="{% url 'fruit:fruit_detail' fruit.slug %}"><img src="{{fruit.image.url}}"
-                                class="img-fluid w-100 rounded-top" alt="" style="height: 200px;"></a>
+                        href="{% url 'fruit:fruit_detail' fruit.slug %}"><img src="{{fruit.image.url}}"
+                                    class="img-fluid w-100 rounded-top" alt="" style="height: 200px;"></a>
                     </div>
-                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                        style="top: 10px; right: 10px;">
-                        {{fruit.type}}</div>
-                    <div class="p-4 rounded-bottom" style="height: 200px;">
+                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">{{fruit.type}}</div>
+                    <div class="p-4 pb-0 rounded-bottom">
                         <h4>{{fruit.name}}</h4>
                         <p>{{fruit.subtitle}}</p>
                         <div class="d-flex justify-content-between flex-lg-wrap">
-                            <p class="text-dark fs-5 fw-bold mb-0">${{fruit.price}} / kg</p>
-                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                            <p class="text-dark fs-5 fw-bold">${{fruit.price}}/ kg</p>
+                            <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
-
-
             </div>
         </div>
     </div>
 </div>
 <!-- Single Product End -->
 
-
-{% endblock body %}
+    {% endblock body %}
