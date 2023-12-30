@@ -18,10 +18,12 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from settings.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('fruit/', include('fruit.urls',namespace='fruit')),
+    path('settings/', include('settings.urls',namespace='settings')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
