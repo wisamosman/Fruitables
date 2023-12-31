@@ -4,7 +4,7 @@
 {% block body %}
 
 	<!-- Start Banner Area -->
-	<section class="banner-area organic-breadcrumb">
+	<section class="banner-area organic-breadcrumb py-5">
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
@@ -38,21 +38,21 @@
 						<h3>Log in to enter</h3>
 						<form class="row login_form"  method="post" id="contactForm" novalidate="novalidate">
 						   {% csrf_token %}	
-							<div class="col-md-12 form-group">
+							<div class="col-md-12 form-group py-3">
 								<input type="text" class="form-control" id="name" name="username" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
 							</div>
-							<div class="col-md-12 form-group">
+							<div class="col-md-12 form-group py-3">
 								<input type="text" class="form-control" id="name" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
 							</div>
 							<div class="col-md-12 form-group">
-								<div class="creat_account">
+								<div class="creat_account p-3">
 									<input type="checkbox" id="f-option2" name="selector">
 									<label for="f-option2">Keep me logged in</label>
 								</div>
 							</div>
 							<div class="col-md-12 form-group">
 								<button type="submit" value="submit" class="primary-btn"><a href="">Log In</a></button>
-								<a href="/accounts/password_reset">Forgot Password?</a>
+								<a href="/accounts/password_reset" style="margin-left: 10px;">Forgot Password?</a>
 							</div>
 						</form>
 					</div>
