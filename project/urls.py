@@ -25,6 +25,7 @@ urlpatterns = [
     path('fruit/', include('fruit.urls',namespace='fruit')),
     path('settings/', include('settings.urls',namespace='settings')),
     path('',home,name='home'),
+    path("__debug__/", include("debug_toolbar.urls")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
