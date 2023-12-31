@@ -10,7 +10,8 @@ def home(request):
     fruits = Fruit.objects.all()[:8]
     reviews = Review.objects.all()
     return render(request,'settings/home.html',{
-        'fruit':fruits,
+
+        'fruits':fruits,
         'reviews':reviews,
     })
 
@@ -18,4 +19,4 @@ def home(request):
 
 class CompanyList(generic.ListView):
     model = Company
-# Create your views here.
+
