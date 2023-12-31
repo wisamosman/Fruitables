@@ -7,6 +7,7 @@ from fruit.models import Fruit,Review
 from django.contrib.admin.views.decorators import staff_member_required
 
 
+
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -17,8 +18,23 @@ def signup(request):
 
     else:
         form = SignupForm()
+    return render(request,'registration/signup.html',{'form':form})
 
-    return render(request,'registration/signup.html',{'form':form})            
+
+
+@staff_member_required
+def dashboard(request):
+    users = User.objects.all().count()
+    fruits = Fruit.objects.all().count()
+    reviews = Review.objects.all().count()
+
+
+
+    return render(request,'registration/dashboard.html',{
+        'users' : users ,  
+        'fruits': fruits , 
+        'reviews' : reviews ,  
+    })    
 
 
 
