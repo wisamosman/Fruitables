@@ -146,7 +146,7 @@
                                                     <a href="{% url 'fruit:fruit_detail' fruit.slug %}"><img src="{{fruit.image.url}}" class="img-fluid w-100 rounded-top" alt="" style="height: 200px;"></a>
                                                 </div>
                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">{{fruit.type}}</div>
-                                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <div class="p-4 border border-secondary border-top-0 rounded-bottom" style="height: 200px;">
                                                     <h4>{{fruit.name}}</h4>
                                                     <p>{{fruit.subtitle}}</p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
@@ -198,8 +198,8 @@
                             <div class="row g-4">
                                 <div class="col-lg-12">
                                     <div class="row g-4">
-                                {% for fruit in fruit_list %}
-                                {% if fruit.type == "Vegetables" %}
+                                {% for fruit in fruits %}
+                                {% if fruit.type == "Fruits" %}
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative fruite-item">
                                                 <div class="fruite-img">
@@ -229,7 +229,7 @@
                             <div class="row g-4">
                                 <div class="col-lg-12">
                                     <div class="row g-4">
-                                    {% for fruit in fruit_list  %}
+                                    {% for fruit in fruits  %}
                                     {% if fruit.type == 'Bread'  %}
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative fruite-item">
@@ -258,7 +258,7 @@
                             <div class="row g-4">
                                 <div class="col-lg-12">
                                     <div class="row g-4">
-                                    {% for fruit in fruit_list %}
+                                    {% for fruit in fruits %}
                                     {% if fruit.type == 'Meat' %}
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative fruite-item">
@@ -350,10 +350,10 @@
                             <a href="{% url 'fruit:fruit_detail' fruit.slug %}"><img src="{{fruit.image.url}}" class="img-fluid w-100 rounded-top" alt="" style="height: 200px;"></a>
                         </div>
                         <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">{{fruit.type}}</div>
-                        <div class="p-4 rounded-bottom">
+                        <div class="p-4 rounded-bottom" style="height: 200px;">
                             <h4>{{fruit.name}}</h4>
                             <p>{{fruit.subtitle}}</p>
-                            <div class="d-flex justify-content-between flex-lg-wrap">
+                            <div class="d-flex justify-content-between flex-lg-wrap" >
                                 <p class="text-dark fs-5 fw-bold mb-0">$ {{fruit.price}}/ kg</p>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
