@@ -15,7 +15,6 @@ class Profile(models.Model):
 
 class Phones(models.Model):
     user = models.ForeignKey(User,related_name='user_phone',on_delete=models.CASCADE)
-    type = models.CharField(max_length=10)
     phone = models.CharField(max_length=20)
 
     def __str__(self):
@@ -26,7 +25,6 @@ class Phones(models.Model):
 
 class Address(models.Model):
     user = models.ForeignKey(User,related_name='user_address',on_delete=models.CASCADE)
-    type = models.CharField(max_length=10)
     address = models.TextField(max_length=200)
 
     def __str__(self):
