@@ -6,7 +6,7 @@
 <div class="container-fluid page-header py-5">
     <h1 class="text-center text-white display-6">Shop Detail</h1>
     <ol class="breadcrumb justify-content-center mb-0">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
         <li class="breadcrumb-item"><a href="#">Pages</a></li>
         <li class="breadcrumb-item active text-white">Shop Detail</li>
     </ol>
@@ -32,11 +32,11 @@
                         <p class="mb-3">{{object.subtitle}}</p>
                         <h5 class="fw-bold mb-3">{{object.price}}$</h5>
                         <div class="d-flex mb-4">
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star {% if object.get_avg_rate.avg > 0 %} active text-secondary {% endif %}"></i>
+                            <i class="fa fa-star {% if object.get_avg_rate.avg > 1 %} active text-secondary {% endif %}"></i>
+                            <i class="fa fa-star {% if object.get_avg_rate.avg > 2 %} active text-secondary {% endif %}"></i>
+                            <i class="fa fa-star {% if object.get_avg_rate.avg > 3 %} active text-secondary {% endif %}"></i>
+                            <i class="fa fa-star {% if object.get_avg_rate.avg > 4 %} active text-secondary {% endif %}"></i>
                         </div>
                         <p class="mb-4">{{object.description}}</p>
                         <div class="input-group quantity mb-5" style="width: 100px;">
@@ -236,11 +236,12 @@
                                         <div>
                                             <h6 class="mb-2">{{fruit.name}}</h6>
                                             <div class="d-flex mb-2">
-                                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 0 %}star text-secondary{% endif %}"></i>
-                                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 1 %}star text-secondary{% endif %}"></i>
-                                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 2 %}star text-secondary{% endif %}"></i>
-                                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 3 %}star text-secondary{% endif %}"></i>
-                                                <i class="fas fa-{% if fruit.get_avg_rate.avg > 4 %}star text-secondary{% endif %}"></i>
+                                                <i class="fas fa-star {% if fruit.get_avg_rate.avg > 0 %} active text-secondary {% endif %}"></i>
+                                                <i class="fas fa-star {% if fruit.get_avg_rate.avg > 1 %} active text-secondary {% endif %}"></i>
+                                                <i class="fas fa-star {% if fruit.get_avg_rate.avg > 2 %} active text-secondary {% endif %}"></i>
+                                                <i class="fas fa-star {% if fruit.get_avg_rate.avg > 3 %} active text-secondary {% endif %}"></i>
+                                                <i class="fas fa-star {% if fruit.get_avg_rate.avg > 4 %} active text-secondary {% endif %}"></i>
+                                                
                                             </div>
                                             <div class="d-flex mb-2">
                                                 <h5 class="fw-bold me-2">{{fruit.price}}$</h5>
