@@ -5,6 +5,7 @@ from django.views import View
 
 
 
+
 # Create your views here.
 
 class FruitList(generic.ListView):
@@ -17,7 +18,7 @@ class FruitList(generic.ListView):
         return context
 
 def fruitshop_list(request):
-    fruitshop_objects = Fruit.objects.all()
+    fruitshop_objects = Fruit.objects.all()[:9]
     return render(request,'fruitshop_list.html',{'fruitshop_objects':fruitshop_objects})
 
 
