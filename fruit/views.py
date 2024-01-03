@@ -16,7 +16,10 @@ class FruitList(generic.ListView):
         context['user_review'] = Review.objects.all()
         return context
 
-    
+
+class Fruit1List(generic.ListView):
+    model = Fruit
+    template_name = 'fruit1_list.html'  
 
 
 
