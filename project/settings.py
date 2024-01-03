@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'settings',
     'debug_toolbar',
     "django_bootstrap5",
+    'orders',
 ]
 
 MIDDLEWARE = [
