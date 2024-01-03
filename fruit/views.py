@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Fruit,Review
-
+from django.views import View
 
 
 
@@ -16,10 +16,11 @@ class FruitList(generic.ListView):
         context['user_review'] = Review.objects.all()
         return context
 
+def fruitshop_list(request):
+    fruitshop_objects = Fruit.objects.all()
+    return render(request,'fruitshop_list.html',{'fruitshop_objects':fruitshop_objects})
 
-class Fruit1List(generic.ListView):
-    model = Fruit
-    template_name = 'fruit1_list.html'  
+
 
 
 
