@@ -70,6 +70,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'settings.company_context_processor.get_company_data',
+                'orders.cart_context_processor.get_cart_data',
             ],
         },
     },
@@ -144,3 +145,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+
+STRIPE_API_KEY_PUBLISHABLE = ''
+STRIPE_API_KEY_SECRET = ''

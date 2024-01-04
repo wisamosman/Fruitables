@@ -11,6 +11,7 @@ class Order(models.Model):
     user = models.ForeignKey(User,related_name='order_user',on_delete=models.SET_NULL,blank=True,null=True)
     code = models.CharField(max_length=30,default=generate_code)
     order_time = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(upload_to='orders')
 
     def __str__(self):
         return self.code
@@ -48,6 +49,5 @@ class CartDetail(models.Model):
     price = models.FloatField(default=0)
     quantity = models.IntegerField(default=1)
     total = models.FloatField(default=0)
-
 
 
