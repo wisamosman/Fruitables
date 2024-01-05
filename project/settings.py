@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'settings',
     'debug_toolbar',
     "django_bootstrap5",
-    
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +70,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'settings.company_context_processor.get_company_data',
+                'orders.cart_context_processor.get_cart_data',
                 
             ],
         },
