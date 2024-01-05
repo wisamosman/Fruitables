@@ -28,7 +28,6 @@ class OrderList(LoginRequiredMixin,ListView):
 
 class OrderDetail(generic.DetailView):
     model = Order
-    
 
 
 def chackout_page(request):
