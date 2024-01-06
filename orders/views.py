@@ -64,7 +64,7 @@ def chackout_page(request):
         'cart_detail':cart_detail , 
         'sub_total': sub_total , 
         'total': total , 
-        'discount': discount
+        'discount': discount,
         })
 
 
@@ -112,7 +112,7 @@ def confirmation(request):
     cart_detail = CartDetail.objects.all()
     
 
-    return render(request, 'orders/order-detail.html',{
+    return render(request, 'orders/order_detail.html',{
         'cart':Cart,
         'cart_detail':CartDetail
 

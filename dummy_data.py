@@ -30,4 +30,4 @@ def seed_fruit(n):
 
 
 
-seed_fruit(300)
+seed_fruit(50)

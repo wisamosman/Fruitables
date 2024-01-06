@@ -1,7 +1,4 @@
 from django.db import models
-
-# Create your models here.
-from django.db import models
 from django.utils import timezone
 from accounts.models import Address , Profile , Phones
 from fruit.models import Fruit
@@ -54,7 +51,7 @@ class Cart(models.Model):
 
 class CartDetail(models.Model):
     cart = models.ForeignKey(Cart , related_name='cart_detail',on_delete=models.CASCADE)
-    fruit = models.ForeignKey(Fruit , related_name='cart_nike',on_delete=models.SET_NULL,null=True)
+    fruit = models.ForeignKey(Fruit , related_name='cart_fruit',on_delete=models.SET_NULL,null=True)
     price = models.FloatField()
     quantity = models.IntegerField()
     total = models.FloatField()
