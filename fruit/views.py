@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from .models import Fruit,Review
 from django.views import View
+from django.core.paginator import Paginator
 
 
 
@@ -17,12 +18,17 @@ class FruitList(generic.ListView):
         context['user_review'] = Review.objects.all()
         return context
 
+
+
 def fruitshop_list(request):
     fruitshop_objects = Fruit.objects.all()[:9]
-    return render(request,'fruitshop_list.html',{'fruitshop_objects':fruitshop_objects})
-
-
-
+    paginator = Paginator(fruitshop_objects, 3)  # تحديد عدد العناصر في كل صفحة
+    page_number = request.GET.get('page')  # استخراج رقم الصفحة الحالية من الطلب
+    page_obj = paginator.get_page(page_number)  # الحصول على كائن الصفحة الحالية
+    return render(request, 'fruitshop_list.html', {
+        'page_obj': page_obj,
+        'fruitshop_objects':fruitshop_objects,
+        })
 
 
 class FruitDetail(generic.DetailView):
