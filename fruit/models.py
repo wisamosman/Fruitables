@@ -50,3 +50,6 @@ class Review(models.Model):
         return f"{self.user}"
     
     
+
+    
+    
