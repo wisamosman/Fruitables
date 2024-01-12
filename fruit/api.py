@@ -16,5 +16,5 @@ def fruit_list_api(request):
 
 
 class FruitDetailAPI(generics.RetrieveDestroyAPIView):
-     queryset = Fruit.objects.all()
-     serializer_class = FruitSerializer
+    queryset = Fruit.objects.all()
+    serializer_class = FruitSerializer
